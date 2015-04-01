@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
-
+ 
 /**
  * MySwipeRefreshLayout is a modified SwipeRefreshLayout so that Titanium views
  * are supported. It overrides the canChildScrollUp method used by Android to 
