@@ -10,7 +10,7 @@ import org.appcelerator.titanium.view.TiUIView;
 import android.util.Log;
 import android.view.LayoutInflater;
 
-import com.rkam.swiperefreshlayout.SwipeRefreshLayout.OnRefreshListener;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 
 public class SwipeRefresh extends TiUIView {
 	
@@ -30,7 +30,7 @@ public class SwipeRefresh extends TiUIView {
 	// Constructor for SwipeRefresh
 	public SwipeRefresh(final SwipeRefreshProxy proxy) {
 		super(proxy);
-		
+
 		try {
 			layout_swipe_refresh = TiRHelper.getResource("layout.swipe_refresh");
 			color1 = TiRHelper.getResource("color.color1");
@@ -65,7 +65,7 @@ public class SwipeRefresh extends TiUIView {
 					this.view = (TiViewProxy) view;
 					this.layout.setNativeView(this.view.getOrCreateView().getNativeView());
 					this.layout.addView(this.view.getOrCreateView().getOuterView());
-					this.layout.setColorScheme(color1, color2, color3, color4);
+					this.layout.setColorSchemeResources(color1, color2, color3, color4);
 				}
 		}
 		super.processProperties(d);
@@ -76,7 +76,7 @@ public class SwipeRefresh extends TiUIView {
 			this.view = (TiViewProxy) view;
 			this.layout.setNativeView(this.view.getOrCreateView().getNativeView());
 			this.layout.addView(this.view.getOrCreateView().getOuterView());
-			this.layout.setColorScheme(color1, color2, color3, color4);
+			this.layout.setColorSchemeResources(color1, color2, color3, color4);
 		}
 	}
 
@@ -84,8 +84,20 @@ public class SwipeRefresh extends TiUIView {
 		return this.layout.isRefreshing();
 	}
 	
-	public void setRefreshing(boolean refreshing) {
-		this.layout.setRefreshing(refreshing);		
+	public void startRefreshing() {
+		this.view.getActivity().runOnUiThread(new Runnable() {
+	        public void run() {
+	        	layout.setRefreshing(true);
+	        }
+	    });
 	}
 	
+	
+	public void endRefreshing() {
+		this.view.getActivity().runOnUiThread(new Runnable() {
+	        public void run() {
+	        	layout.setRefreshing(false);
+	        }
+	    });
+	}	
 }

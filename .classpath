@@ -13,6 +13,6 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/bradb/Development/SDKs/Android/extras/android/support/v4/android-support-v4.jar" sourcepath="/Users/bradb/Development/SDKs/Android/extras/android/support/v4"/>
+	<classpathentry kind="lib" path="/Users/bradb/Development/SDKs/Android/extras/android/support/v4/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
