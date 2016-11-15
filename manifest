@@ -2,12 +2,13 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.4.1
-apiversion: 2
-description: My module
+version: 1.0.0
+apiversion: 3
+architectures: armeabi-v7a;x86
+description: Support for pull to refresh
 author: Raymond Kam
-license: Specify your license
-copyright: Copyright (c) 2014 by Your Company
+license: creative Commons
+copyright: Copyright (c) 2016 CC
 
 
 # these should not be edited
@@ -15,5 +16,4 @@ name: swiperefreshlayout
 moduleid: com.rkam.swiperefreshlayout
 guid: fc0f2168-ac27-4239-bcb0-c51d7683eb05
 platform: android
-minsdk: 3.5.0.GA
-architectures: armeabi;armeabi-v7a;x86
+minsdk: 6.0.0.GA
